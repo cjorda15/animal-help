@@ -39873,7 +39873,8 @@ var _OptionalOptions2 = _interopRequireDefault(_OptionalOptions);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SearchForPets = function SearchForPets(_ref) {
-  var setState = _ref.setState;
+  var setState = _ref.setState,
+      state = _ref.state;
 
   return _react2.default.createElement(
     'div',
@@ -39894,22 +39895,26 @@ var SearchForPets = function SearchForPets(_ref) {
     _react2.default.createElement(_OptionalOptions2.default, {
       options: ['any', 'barnyard', 'bird', 'cat', 'dog', 'horse', 'reptile', 'smallfurry'],
       type: 'animal',
-      setState: setState
+      setState: setState,
+      state: state
     }),
     _react2.default.createElement(_OptionalOptions2.default, {
       options: ['any', 'S', 'M', 'L', 'XL'],
       type: 'size',
-      setState: setState
+      setState: setState,
+      state: state
     }),
     _react2.default.createElement(_OptionalOptions2.default, {
       options: ['both', 'M', 'F'],
       type: 'sex',
-      setState: setState
+      setState: setState,
+      state: state
     }),
     _react2.default.createElement(_OptionalOptions2.default, {
       options: ['any', 'baby', 'young', 'adult', 'senior'],
       type: 'age',
-      setState: setState
+      setState: setState,
+      state: state
     }),
     _react2.default.createElement(
       'button',
@@ -39943,7 +39948,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var OptionalOptions = function OptionalOptions(_ref) {
   var options = _ref.options,
       type = _ref.type,
-      setState = _ref.setState;
+      setState = _ref.setState,
+      state = _ref.state;
 
   var handleChange = function handleChange(e) {
     setState(_defineProperty({}, type, e.target.value));
@@ -39958,7 +39964,7 @@ var OptionalOptions = function OptionalOptions(_ref) {
     options.map(function (value, i) {
       return _react2.default.createElement(
         'option',
-        { key: i, value: value },
+        { selected: state[type] === value, key: i, value: value },
         value
       );
     })

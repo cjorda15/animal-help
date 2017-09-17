@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OptionalOptions = ({ options, type, setState }) => {
+const OptionalOptions = ({ options, type, setState, state }) => {
   const handleChange = e => {
     setState({ [type]: e.target.value });
   };
@@ -12,7 +12,7 @@ const OptionalOptions = ({ options, type, setState }) => {
     >
       {options.map((value, i) => {
         return (
-          <option key={i} value={value}>
+          <option selected={state[type] === value} key={i} value={value}>
             {value}
           </option>
         );

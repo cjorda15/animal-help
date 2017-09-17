@@ -2,7 +2,7 @@ import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import OptionalOptions from './OptionalOptions';
 
-const SearchForPets = ({ setState }) => {
+const SearchForPets = ({ setState, state }) => {
   return (
     <div>
       <Autocomplete
@@ -27,21 +27,25 @@ const SearchForPets = ({ setState }) => {
         ]}
         type="animal"
         setState={setState}
+        state={state}
       />
       <OptionalOptions
         options={['any', 'S', 'M', 'L', 'XL']}
         type="size"
         setState={setState}
+        state={state}
       />
       <OptionalOptions
         options={['both', 'M', 'F']}
         type="sex"
         setState={setState}
+        state={state}
       />
       <OptionalOptions
         options={['any', 'baby', 'young', 'adult', 'senior']}
         type="age"
         setState={setState}
+        state={state}
       />
       <button>submit</button>
     </div>
