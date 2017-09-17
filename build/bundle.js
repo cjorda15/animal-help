@@ -29746,9 +29746,13 @@ var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactGoogleAutocomplete = __webpack_require__(278);
+var _SearchForPets = __webpack_require__(306);
 
-var _reactGoogleAutocomplete2 = _interopRequireDefault(_reactGoogleAutocomplete);
+var _SearchForPets2 = _interopRequireDefault(_SearchForPets);
+
+var _SearchForShelter = __webpack_require__(308);
+
+var _SearchForShelter2 = _interopRequireDefault(_SearchForShelter);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29767,7 +29771,12 @@ var SearchFor = function (_Component) {
     var _this = _possibleConstructorReturn(this, (SearchFor.__proto__ || Object.getPrototypeOf(SearchFor)).call(this));
 
     _this.state = {
-      checked: 'pets'
+      checked: 'pets',
+      animal: 'any',
+      size: 'any',
+      sex: 'both',
+      age: 'any',
+      location: ''
     };
     return _this;
   }
@@ -29778,46 +29787,9 @@ var SearchFor = function (_Component) {
       this.setState({ checked: e.target.value });
     }
   }, {
-    key: 'searchShelter',
-    value: function searchShelter() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'p',
-          null,
-          'asdfasdf'
-        ),
-        _react2.default.createElement(_reactGoogleAutocomplete2.default, {
-          style: { width: '90%' },
-          onPlaceSelected: function onPlaceSelected(place) {
-            console.log(place.formatted_address, '!!!!!!!!!!');
-          },
-          types: ['(regions)'],
-          componentRestrictions: { country: 'ru' }
-        })
-      );
-    }
-  }, {
-    key: 'searchPets',
-    value: function searchPets() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'p',
-          null,
-          'boo'
-        ),
-        _react2.default.createElement(_reactGoogleAutocomplete2.default, {
-          style: { width: '90%' },
-          onPlaceSelected: function onPlaceSelected(place) {
-            console.log(place.formatted_address, '!!!!!!!!!!');
-          },
-          types: ['(regions)'],
-          componentRestrictions: { country: 'usa' }
-        })
-      );
+    key: 'showForm',
+    value: function showForm() {
+      return this.state.checked === 'pets' ? _react2.default.createElement(_SearchForPets2.default, { state: this.state, setState: this.setState.bind(this) }) : _react2.default.createElement(_SearchForShelter2.default, { state: this.state });
     }
   }, {
     key: 'render',
@@ -29861,7 +29833,7 @@ var SearchFor = function (_Component) {
             _react2.default.createElement('br', null)
           )
         ),
-        this.state.checked === 'pets' ? this.searchPets() : this.searchShelter()
+        this.showForm()
       );
     }
   }]);
@@ -30106,11 +30078,11 @@ var NavBar = function (_Component) {
     value: function loggedIn() {
       return [_react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: 'nav-link', activeClassName: 'selected', to: '/' },
+        { className: 'nav-link', activeClassName: 'selected', key: 0, to: '/' },
         'home'
       ), _react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: 'nav-link', activeClassName: 'selected', to: '/' },
+        { className: 'nav-link', activeClassName: 'selected', key: 1, to: '/' },
         'logoff'
       )];
     }
@@ -30119,15 +30091,25 @@ var NavBar = function (_Component) {
     value: function loggedOff() {
       return [_react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: 'nav-link', activeClassName: 'selected', to: '/' },
+        { className: 'nav-link', activeClassName: 'selected', key: 0, to: '/' },
         'home'
       ), _react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: 'nav-link', activeClassName: 'selected', to: '/signup' },
+        {
+          className: 'nav-link',
+          activeClassName: 'selected',
+          key: 1,
+          to: '/signup'
+        },
         'sign up'
       ), _react2.default.createElement(
         _reactRouterDom.NavLink,
-        { className: 'nav-link', activeClassName: 'selected', to: '/login' },
+        {
+          className: 'nav-link',
+          activeClassName: 'selected',
+          key: 2,
+          to: '/login'
+        },
         'login'
       )];
     }
@@ -39864,6 +39846,169 @@ module.exports = function (css) {
 	return fixedCss;
 };
 
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactGoogleAutocomplete = __webpack_require__(278);
+
+var _reactGoogleAutocomplete2 = _interopRequireDefault(_reactGoogleAutocomplete);
+
+var _OptionalOptions = __webpack_require__(307);
+
+var _OptionalOptions2 = _interopRequireDefault(_OptionalOptions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchForPets = function SearchForPets(_ref) {
+  var setState = _ref.setState;
+
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_reactGoogleAutocomplete2.default, {
+      style: { width: '90%' },
+      onPlaceSelected: function onPlaceSelected(place) {
+        console.log(place.formatted_address, '!!!!!!!!!!');
+      },
+      types: ['(regions)'],
+      componentRestrictions: { country: 'usa' }
+    }),
+    _react2.default.createElement(
+      'p',
+      null,
+      'optional search criteria'
+    ),
+    _react2.default.createElement(_OptionalOptions2.default, {
+      options: ['any', 'barnyard', 'bird', 'cat', 'dog', 'horse', 'reptile', 'smallfurry'],
+      type: 'animal',
+      setState: setState
+    }),
+    _react2.default.createElement(_OptionalOptions2.default, {
+      options: ['any', 'S', 'M', 'L', 'XL'],
+      type: 'size',
+      setState: setState
+    }),
+    _react2.default.createElement(_OptionalOptions2.default, {
+      options: ['both', 'M', 'F'],
+      type: 'sex',
+      setState: setState
+    }),
+    _react2.default.createElement(_OptionalOptions2.default, {
+      options: ['any', 'baby', 'young', 'adult', 'senior'],
+      type: 'age',
+      setState: setState
+    }),
+    _react2.default.createElement(
+      'button',
+      null,
+      'submit'
+    )
+  );
+};
+
+exports.default = SearchForPets;
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var OptionalOptions = function OptionalOptions(_ref) {
+  var options = _ref.options,
+      type = _ref.type,
+      setState = _ref.setState;
+
+  var handleChange = function handleChange(e) {
+    setState(_defineProperty({}, type, e.target.value));
+  };
+  return _react2.default.createElement(
+    'select',
+    {
+      onChange: function onChange(e) {
+        handleChange(e);
+      }
+    },
+    options.map(function (value, i) {
+      return _react2.default.createElement(
+        'option',
+        { key: i, value: value },
+        value
+      );
+    })
+  );
+};
+
+exports.default = OptionalOptions;
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactGoogleAutocomplete = __webpack_require__(278);
+
+var _reactGoogleAutocomplete2 = _interopRequireDefault(_reactGoogleAutocomplete);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchForShelter = function SearchForShelter() {
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(_reactGoogleAutocomplete2.default, {
+      style: { width: '90%' },
+      onPlaceSelected: function onPlaceSelected(place) {
+        // console.log(place.formatted_address, '!!!!!!!!!!');
+      },
+      types: ['(regions)'],
+      componentRestrictions: { country: 'usa' }
+    }),
+    _react2.default.createElement(
+      'button',
+      null,
+      'submit'
+    )
+  );
+};
+
+exports.default = SearchForShelter;
 
 /***/ })
 /******/ ]);

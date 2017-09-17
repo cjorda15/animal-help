@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import Autocomplete from 'react-google-autocomplete';
+import SearchForPets from './SearchForPets';
+import SearchForShelter from './SearchForShelter';
 
 class SearchFor extends Component {
   constructor() {
     super();
     this.state = {
-      checked: 'pets'
+      checked: 'pets',
+      animal: 'any',
+      size: 'any',
+      sex: 'both',
+      age: 'any',
+      location: ''
     };
   }
 
@@ -13,35 +19,11 @@ class SearchFor extends Component {
     this.setState({ checked: e.target.value });
   }
 
-  searchShelter() {
-    return (
-      <div>
-        <p>asdfasdf</p>
-        <Autocomplete
-          style={{ width: '90%' }}
-          onPlaceSelected={place => {
-            console.log(place.formatted_address, '!!!!!!!!!!');
-          }}
-          types={['(regions)']}
-          componentRestrictions={{ country: 'ru' }}
-        />
-      </div>
-    );
-  }
-
-  searchPets() {
-    return (
-      <div>
-        <p>boo</p>
-        <Autocomplete
-          style={{ width: '90%' }}
-          onPlaceSelected={place => {
-            console.log(place.formatted_address, '!!!!!!!!!!');
-          }}
-          types={['(regions)']}
-          componentRestrictions={{ country: 'usa' }}
-        />
-      </div>
+  showForm() {
+    return this.state.checked === 'pets' ? (
+      <SearchForPets state={this.state} setState={this.setState.bind(this)} />
+    ) : (
+      <SearchForShelter state={this.state} />
     );
   }
 
@@ -76,11 +58,7 @@ class SearchFor extends Component {
             <br />
           </label>
         </form>
-        {this.state.checked === 'pets' ? (
-          this.searchPets()
-        ) : (
-          this.searchShelter()
-        )}
+        {this.showForm()}
       </section>
     );
   }

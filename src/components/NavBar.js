@@ -5,10 +5,10 @@ import { slide as Menu } from 'react-burger-menu';
 class NavBar extends Component {
   loggedIn() {
     return [
-      <NavLink className="nav-link" activeClassName="selected" to={'/'}>
+      <NavLink className="nav-link" activeClassName="selected" key={0} to={'/'}>
         home
       </NavLink>,
-      <NavLink className="nav-link" activeClassName="selected" to={'/'}>
+      <NavLink className="nav-link" activeClassName="selected" key={1} to={'/'}>
         logoff
       </NavLink>
     ];
@@ -16,13 +16,23 @@ class NavBar extends Component {
 
   loggedOff() {
     return [
-      <NavLink className="nav-link" activeClassName="selected" to={'/'}>
+      <NavLink className="nav-link" activeClassName="selected" key={0} to={'/'}>
         home
       </NavLink>,
-      <NavLink className="nav-link" activeClassName="selected" to={'/signup'}>
+      <NavLink
+        className="nav-link"
+        activeClassName="selected"
+        key={1}
+        to={'/signup'}
+      >
         sign up
       </NavLink>,
-      <NavLink className="nav-link" activeClassName="selected" to={'/login'}>
+      <NavLink
+        className="nav-link"
+        activeClassName="selected"
+        key={2}
+        to={'/login'}
+      >
         login
       </NavLink>
     ];
