@@ -13,10 +13,14 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <NavBar />
+        <NavBar user={this.props.user} />
         <Switch>
           <Route
             path="/signup"
+            render={({ history }) => <SignUp history={history} />}
+          />
+          <Route
+            path="/login"
             render={({ history }) => <SignUp history={history} />}
           />
           <Route
@@ -28,5 +32,11 @@ class App extends Component {
     );
   }
 }
+
+const mapStateToProps = store => {
+  return {
+    user: store.user
+  };
+};
 
 export default connect()(App);

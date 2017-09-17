@@ -1,0 +1,17 @@
+.intro-wrapper {
+  background-size: cover;
+  background-image: url('/img/mainPageImg.jpg');
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+
+.intro-banner {
+  bottom: 20px;
+  color: #fff;
+  font-size: 3.5em;
+  padding: 10px;
+  position: absolute;
+  text-shadow: 1px 1px 1px #000;
+  width: 80%;
+}
