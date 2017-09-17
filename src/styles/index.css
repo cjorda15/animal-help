@@ -1,5 +1,7 @@
 @import url('main.css');
 @import url('navbar.css');
+@import url('searchfor.css');
+@import url('adoption-info.css');
 
 * {
   box-sizing: border-box;

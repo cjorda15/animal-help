@@ -15,5 +15,3 @@ const Main = () => {
 };
 
 export default Main;
-
-// style={{ backgroundImage: 'url("/img/mainPageImg.jpg")' }}

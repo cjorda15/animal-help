@@ -1,4 +1,5 @@
 .intro-wrapper {
+  background-attachment: fixed;
   background-size: cover;
   background-image: url('/img/mainPageImg.jpg');
   background-size: cover;
