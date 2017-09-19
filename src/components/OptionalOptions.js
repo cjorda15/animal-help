@@ -4,15 +4,17 @@ const OptionalOptions = ({ options, type, setState, state }) => {
   const handleChange = e => {
     setState({ [type]: e.target.value });
   };
+
   return (
     <select
+      selected={state[type]}
       onChange={e => {
         handleChange(e);
       }}
     >
       {options.map((value, i) => {
         return (
-          <option selected={state[type] === value} key={i} value={value}>
+          <option key={i} value={value}>
             {value}
           </option>
         );

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SearchForPets from './SearchForPets';
 import SearchForShelter from './SearchForShelter';
+import { updateAnimalList } from '../actions';
+import { connect } from 'react-redux';
 
 class SearchFor extends Component {
   constructor() {
@@ -15,15 +17,47 @@ class SearchFor extends Component {
     };
   }
 
+  submitSearch() {
+    const { checked, animal, size, sex, age, location } = this.state;
+    if (checked == 'pets') {
+      fetch(
+        `pets/?animal=${animal}&size=${size}&sex=${sex}&age=${age}&location=${location}`
+      )
+        .then(val => val.json())
+        .then(val => this.props.handleAnimalList(val.petfinder.pets.pet))
+        .catch(err => console.log(err, '???'));
+    } else {
+      fetch('shelters')
+        .then(val => val.json())
+        .then(val => console.log(val, '!!!'))
+        .catch(err => console.log(err, '???'));
+    }
+  }
+
   handleOptionChange(e) {
-    this.setState({ checked: e.target.value });
+    this.setState({
+      checked: e.target.value,
+      animal: 'any',
+      size: 'any',
+      sex: 'both',
+      age: 'any',
+      location: ''
+    });
   }
 
   showForm() {
     return this.state.checked === 'pets' ? (
-      <SearchForPets state={this.state} setState={this.setState.bind(this)} />
+      <SearchForPets
+        state={this.state}
+        setState={this.setState.bind(this)}
+        handleClick={this.submitSearch.bind(this)}
+      />
     ) : (
-      <SearchForShelter state={this.state} />
+      <SearchForShelter
+        state={this.state}
+        setState={this.setState.bind(this)}
+        handleClick={this.submitSearch.bind(this)}
+      />
     );
   }
 
@@ -64,4 +98,12 @@ class SearchFor extends Component {
   }
 }
 
-export default SearchFor;
+const mapDispatchToProps = dispatch => {
+  return {
+    handleAnimalList: input => {
+      dispatch(updateAnimalList(input));
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(SearchFor);

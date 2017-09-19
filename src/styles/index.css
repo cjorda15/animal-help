@@ -2,6 +2,7 @@
 @import url('navbar.css');
 @import url('searchfor.css');
 @import url('adoption-info.css');
+@import url('animalcard.css');
 
 * {
   box-sizing: border-box;

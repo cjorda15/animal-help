@@ -2,13 +2,13 @@ import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import OptionalOptions from './OptionalOptions';
 
-const SearchForPets = ({ setState, state }) => {
+const SearchForPets = ({ setState, state, handleClick }) => {
   return (
     <div>
       <Autocomplete
         style={{ width: '90%' }}
         onPlaceSelected={place => {
-          console.log(place.formatted_address, '!!!!!!!!!!');
+          setState({ location: place.formatted_address });
         }}
         types={['(regions)']}
         componentRestrictions={{ country: 'usa' }}
@@ -47,7 +47,13 @@ const SearchForPets = ({ setState, state }) => {
         setState={setState}
         state={state}
       />
-      <button>submit</button>
+      <button
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        submit
+      </button>
     </div>
   );
 };

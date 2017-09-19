@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchFor from './SearchFor';
+import AnimalList from './AnimalList';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
         </p>
       </div>
       <SearchFor />
+      <AnimalList />
     </div>
   );
 };
