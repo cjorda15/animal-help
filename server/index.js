@@ -22,13 +22,18 @@ app.get('/', (req, res) => {
 app.get('/pets', (req, res) => {
   console.log('hit');
   const { animal, size, sex, age, location } = req.query;
-  // fetch(
-  //   `http://api.petfinder.com/pet.find?key=${process.env
-  //     .API_KEY}&animal=${animal}&size=${size}&sex=${sex}&age=${age}&location=80237&format=json`
-  // )
+  console.log(req.query, '!#');
+  // &sex=${sex}
+  // &age=${age}
+  // &size=${size}
+
   fetch(
-    'http://api.petfinder.com/pet.find?key=2083011f1f5787d56005725f94057fc9&location=80237&format=json'
+    `http://api.petfinder.com/pet.find?key=${process.env
+      .API_KEY}&animal=${animal}&location=80237&format=json`
   )
+    // fetch(
+    //   'http://api.petfinder.com/pet.find?key=2083011f1f5787d56005725f94057fc9&location=80237&format=json'
+    // )
     .then(data => data.json())
     .then(data => res.send(data))
     // .then(data => res.send(data.body))
