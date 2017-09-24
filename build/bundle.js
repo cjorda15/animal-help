@@ -30443,49 +30443,62 @@ var Animals = function Animals(_ref) {
 
   var animalCard = function animalCard() {
     return _react2.default.createElement(
-      'div',
-      { className: 'animal-card' },
-      _react2.default.createElement('img', { src: data.media.photos.photo[2].$t }),
+      "div",
+      { className: "animal-card" },
       _react2.default.createElement(
-        'p',
-        null,
-        data.name.$t
+        "div",
+        { className: "animal-card-top" },
+        _react2.default.createElement("img", { src: data.media.photos.photo[2].$t }),
+        _react2.default.createElement(
+          "div",
+          { className: "animal-card-top-content" },
+          _react2.default.createElement(
+            "p",
+            null,
+            data.name.$t
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "sex: ",
+            data.sex.$t
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "size: ",
+            data.size.$t
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "located: ",
+            data.contact.address1.$t,
+            ",",
+            data.contact.city.$t,
+            ",",
+            ' ',
+            data.contact.state.$t,
+            ", ",
+            data.contact.zip.$t,
+            ' '
+          ),
+          _react2.default.createElement(
+            "p",
+            null,
+            "contact: ",
+            data.contact.phone.$t
+          )
+        )
       ),
       _react2.default.createElement(
-        'p',
+        "button",
         null,
-        'sex: ',
-        data.sex.$t
+        "save info"
       ),
       _react2.default.createElement(
-        'p',
-        null,
-        'size: ',
-        data.size.$t
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'located: ',
-        data.contact.address1.$t,
-        ',',
-        data.contact.city.$t,
-        ',',
-        ' ',
-        data.contact.state.$t,
-        ', ',
-        data.contact.zip.$t,
-        ' '
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
-        'contact: ',
-        data.contact.phone.$t
-      ),
-      _react2.default.createElement(
-        'p',
-        null,
+        "p",
+        { className: "animal-card-bottom" },
         data.description.$t
       )
     );
@@ -39932,7 +39945,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".intro-wrapper {\n  background-attachment: fixed;\n  background-size: cover;\n  background-image: url('/img/mainPageImg.jpg');\n  background-size: cover;\n  border-top: 2px solid #ace;\n  height: 100vh;\n  position: relative;\n}\n\n.intro-banner {\n  background: #ace;\n  color: #aec;\n  font-size: 2.5em;\n  margin-top: 85px;\n  padding: 10px;\n  text-align: center;\n  text-shadow: 0px 1px 1px #000;\n}\n\n#down-arrow-icon {\n  background: #ace;\n  border-radius: 165px;\n  font-size: 50px;\n  padding: 13px;\n  position: absolute;\n  top: 500px;\n  left: 50%;\n}\n\n.into-animation {\n  animation-fill-mode: forwards;\n  animation-name: intro;\n  animation-duration: 3s;\n}\n\n.bottom-main-page-wrapper {\n  margin: 0px auto;\n  width: 80%;\n}\n\n@keyframes intro {\n  0% {\n    opacity: 1;\n  }\n\n  100% {\n    top: 150%;\n    opacity: 0;\n    z-index: -3;\n  }\n}\n", ""]);
+exports.push([module.i, ".intro-wrapper {\n  background-attachment: fixed;\n  background-size: cover;\n  background-image: url('/img/mainPageImg.jpg');\n  background-size: cover;\n  border-top: 2px solid #ace;\n  height: 100vh;\n  position: relative;\n}\n\n.intro-banner {\n  background: #ace;\n  color: #aec;\n  font-size: 2.5em;\n  margin-top: 85px;\n  padding: 10px;\n  text-align: center;\n  text-shadow: 0px 1px 1px #000;\n}\n\n#down-arrow-icon {\n  background: #ace;\n  border-radius: 165px;\n  font-size: 50px;\n  padding: 13px;\n  position: absolute;\n  top: 500px;\n  left: 50%;\n}\n\n.into-animation {\n  animation-fill-mode: forwards;\n  animation-name: intro;\n  animation-duration: 3s;\n}\n\n.bottom-main-page-wrapper {\n  margin: 0px auto;\n  width: 80%;\n}\n\n@media (max-width: 400px) {\n  .intro-wrapper {\n    background-position-x: -130px;\n  }\n}\n\n@keyframes intro {\n  0% {\n    opacity: 1;\n  }\n\n  100% {\n    top: 150%;\n    opacity: 0;\n    z-index: -3;\n  }\n}\n", ""]);
 
 // exports
 
@@ -39962,7 +39975,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".animal-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n", ""]);
+exports.push([module.i, ".animal-card {\n  align-items: flex-start;\n  background-color: aliceblue;\n  border-radius: 20px;\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  margin: 50px 0px;\n}\n\n.animal-card img {\n  align-self: center;\n  border-radius: 20px;\n  height: 310px;\n  width: 310px;\n}\n\n.animal-card-top {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin: 0px auto;\n  width: 90%;\n}\n\n.animal-card-top-content {\n  line-height: 2.5;\n}\n\n.animal-card-bottom {\n  line-height: 2.5;\n  padding: 20px;\n}\n\n.animal-card button {\n  background-color: #aec;\n  border: none;\n  height: 60px;\n  margin-left: 30px;\n  outline: none;\n  width: 135px;\n}\n\n.animal-card button:hover {\n  border: 1px solid #aaa;\n}\n", ""]);
 
 // exports
 
@@ -50742,7 +50755,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".search-form-wrapper {\n  align-items: center;\n  background: #ace;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: auto;\n  margin-top: 15px;\n  padding: 25px;\n  margin: 0px auto;\n}\n\n.search-form-wrapper span {\n  padding-left: 5px;\n  font-size: 20px;\n}\n\n#search-for-pets-wrapper,\n#search-for-shelter-wrapper {\n  height: 200px;\n  width: 300px;\n}\n\n.autocomplete-input {\n  outline: none;\n  border: none;\n  height: 53px;\n  font-size: 17px;\n  margin-top: 10px;\n  padding-left: 20px;\n  width: 100%;\n}\n\n.search-form-wrapper p {\n  font-size: 21px;\n  padding: 5px;\n}\n\n.search-form-wrapper select,\n.search-form-wrapper button {\n  height: 44px;\n}\n\n.search-form-wrapper button {\n  width: 60px;\n}\n", ""]);
+exports.push([module.i, ".search-form-wrapper {\n  align-items: center;\n  background: #ace;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: auto;\n  margin-top: 15px;\n  padding: 25px;\n  margin: 0px auto;\n}\n\n.search-form-wrapper span {\n  padding-left: 5px;\n  font-size: 20px;\n}\n\n#search-for-pets-wrapper,\n#search-for-shelter-wrapper {\n  height: 200px;\n  width: 300px;\n}\n\n.autocomplete-input {\n  background-color: #aec;\n  border: none;\n  height: 53px;\n  font-size: 17px;\n  margin-top: 10px;\n  padding-left: 20px;\n  outline: none;\n  width: 100%;\n}\n\n.search-form-wrapper p {\n  font-size: 21px;\n  padding: 5px;\n}\n\n.search-form-wrapper select {\n  height: 50px;\n  width: 70px;\n}\n\n.search-form-wrapper button {\n  background-color: #aec;\n  border: none;\n  outline: none;\n  margin-top: 20px;\n  height: 55px;\n  width: 132px;\n}\n\n.search-form-wrapper button:hover {\n  background-color: #ace;\n  border: 2px solid #000;\n  transition: all 0.5s;\n}\n", ""]);
 
 // exports
 

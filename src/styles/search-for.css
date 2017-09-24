@@ -22,12 +22,13 @@
 }
 
 .autocomplete-input {
-  outline: none;
+  background-color: #aec;
   border: none;
   height: 53px;
   font-size: 17px;
   margin-top: 10px;
   padding-left: 20px;
+  outline: none;
   width: 100%;
 }
 
@@ -36,11 +37,22 @@
   padding: 5px;
 }
 
-.search-form-wrapper select,
-.search-form-wrapper button {
-  height: 44px;
+.search-form-wrapper select {
+  height: 50px;
+  width: 70px;
 }
 
 .search-form-wrapper button {
-  width: 60px;
+  background-color: #aec;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  height: 55px;
+  width: 132px;
+}
+
+.search-form-wrapper button:hover {
+  background-color: #ace;
+  border: 2px solid #000;
+  transition: all 0.5s;
 }
