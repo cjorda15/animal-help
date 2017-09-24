@@ -22,8 +22,8 @@ const Animals = ({ data }) => {
             <p>contact: {data.contact.phone.$t}</p>
           </div>
         </div>
-        <button>save info</button>
         <p className="animal-card-bottom">{data.description.$t}</p>
+        <button>save info</button>
       </div>
     );
   };

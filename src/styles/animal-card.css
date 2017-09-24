@@ -11,8 +11,10 @@
 .animal-card img {
   align-self: center;
   border-radius: 20px;
-  height: 310px;
-  width: 310px;
+  max-width: 400px;
+  max-height: 400px;
+  height: 100%;
+  width: 100%;
 }
 
 .animal-card-top {

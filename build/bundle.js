@@ -30492,14 +30492,14 @@ var Animals = function Animals(_ref) {
         )
       ),
       _react2.default.createElement(
-        "button",
-        null,
-        "save info"
-      ),
-      _react2.default.createElement(
         "p",
         { className: "animal-card-bottom" },
         data.description.$t
+      ),
+      _react2.default.createElement(
+        "button",
+        null,
+        "save info"
       )
     );
   };
@@ -39975,7 +39975,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".animal-card {\n  align-items: flex-start;\n  background-color: aliceblue;\n  border-radius: 20px;\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  margin: 50px 0px;\n}\n\n.animal-card img {\n  align-self: center;\n  border-radius: 20px;\n  height: 310px;\n  width: 310px;\n}\n\n.animal-card-top {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin: 0px auto;\n  width: 90%;\n}\n\n.animal-card-top-content {\n  line-height: 2.5;\n}\n\n.animal-card-bottom {\n  line-height: 2.5;\n  padding: 20px;\n}\n\n.animal-card button {\n  background-color: #aec;\n  border: none;\n  height: 60px;\n  margin-left: 30px;\n  outline: none;\n  width: 135px;\n}\n\n.animal-card button:hover {\n  border: 1px solid #aaa;\n}\n", ""]);
+exports.push([module.i, ".animal-card {\n  align-items: flex-start;\n  background-color: aliceblue;\n  border-radius: 20px;\n  display: flex;\n  flex-direction: column;\n  padding: 20px;\n  margin: 50px 0px;\n}\n\n.animal-card img {\n  align-self: center;\n  border-radius: 20px;\n  max-width: 400px;\n  max-height: 400px;\n  height: 100%;\n  width: 100%;\n}\n\n.animal-card-top {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin: 0px auto;\n  width: 90%;\n}\n\n.animal-card-top-content {\n  line-height: 2.5;\n}\n\n.animal-card-bottom {\n  line-height: 2.5;\n  padding: 20px;\n}\n\n.animal-card button {\n  background-color: #aec;\n  border: none;\n  height: 60px;\n  margin-left: 30px;\n  outline: none;\n  width: 135px;\n}\n\n.animal-card button:hover {\n  border: 1px solid #aaa;\n}\n", ""]);
 
 // exports
 
@@ -50755,7 +50755,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".search-form-wrapper {\n  align-items: center;\n  background: #ace;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: auto;\n  margin-top: 15px;\n  padding: 25px;\n  margin: 0px auto;\n}\n\n.search-form-wrapper span {\n  padding-left: 5px;\n  font-size: 20px;\n}\n\n#search-for-pets-wrapper,\n#search-for-shelter-wrapper {\n  height: 200px;\n  width: 300px;\n}\n\n.autocomplete-input {\n  background-color: #aec;\n  border: none;\n  height: 53px;\n  font-size: 17px;\n  margin-top: 10px;\n  padding-left: 20px;\n  outline: none;\n  width: 100%;\n}\n\n.search-form-wrapper p {\n  font-size: 21px;\n  padding: 5px;\n}\n\n.search-form-wrapper select {\n  height: 50px;\n  width: 70px;\n}\n\n.search-form-wrapper button {\n  background-color: #aec;\n  border: none;\n  outline: none;\n  margin-top: 20px;\n  height: 55px;\n  width: 132px;\n}\n\n.search-form-wrapper button:hover {\n  background-color: #ace;\n  border: 2px solid #000;\n  transition: all 0.5s;\n}\n", ""]);
+exports.push([module.i, ".search-form-wrapper {\n  align-items: center;\n  background: #ace;\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  height: auto;\n  margin-top: 15px;\n  padding: 25px;\n  margin: 0px auto;\n}\n\n.search-form-wrapper span {\n  color: #fff;\n  font-size: 20px;\n  padding-left: 5px;\n}\n\n#search-for-pets-wrapper,\n#search-for-shelter-wrapper {\n  height: 200px;\n  width: 300px;\n}\n\n.autocomplete-input {\n  background-color: #aec;\n  border: none;\n  height: 53px;\n  font-size: 17px;\n  margin-top: 10px;\n  padding-left: 20px;\n  outline: none;\n  width: 100%;\n}\n\n.search-form-wrapper p {\n  color: #fff;\n  font-size: 21px;\n  padding: 5px;\n}\n\n.search-form-wrapper select {\n  font-size: 15px;\n  height: 50px;\n  width: 70px;\n}\n\n.search-form-wrapper button {\n  background-color: #aec;\n  border: none;\n  outline: none;\n  margin-top: 20px;\n  height: 55px;\n  width: 132px;\n}\n\n.search-form-wrapper button:hover {\n  background-color: #ace;\n  border: 2px solid #000;\n  transition: all 0.5s;\n}\n", ""]);
 
 // exports
 
