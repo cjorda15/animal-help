@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
   margin: 0px auto;
   width: 90%;
 }
@@ -45,4 +46,27 @@
 
 .animal-card button:hover {
   border: 1px solid #aaa;
+}
+
+.left-arrow {
+  background: darkgray;
+  border-radius: 20px;
+  font-size: 45px;
+  position: absolute;
+  top: 25%;
+}
+
+.right-arrow {
+  background: darkgray;
+  border-radius: 20px;
+  font-size: 45px;
+  position: absolute;
+  top: 25%;
+  right: 0%;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  transition: all 1s;
+  background: red;
 }
