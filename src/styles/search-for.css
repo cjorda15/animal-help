@@ -1,0 +1,46 @@
+.search-form-wrapper {
+  align-items: center;
+  background: #ace;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: auto;
+  margin-top: 15px;
+  padding: 25px;
+  margin: 0px auto;
+}
+
+.search-form-wrapper span {
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+#search-for-pets-wrapper,
+#search-for-shelter-wrapper {
+  height: 200px;
+  width: 300px;
+}
+
+.autocomplete-input {
+  outline: none;
+  border: none;
+  height: 53px;
+  font-size: 17px;
+  margin-top: 10px;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.search-form-wrapper p {
+  font-size: 21px;
+  padding: 5px;
+}
+
+.search-form-wrapper select,
+.search-form-wrapper button {
+  height: 44px;
+}
+
+.search-form-wrapper button {
+  width: 60px;
+}

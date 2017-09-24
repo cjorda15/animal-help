@@ -4,9 +4,9 @@ import OptionalOptions from './OptionalOptions';
 
 const SearchForPets = ({ setState, state, handleClick }) => {
   return (
-    <div>
+    <div id="search-for-pets-wrapper">
       <Autocomplete
-        style={{ width: '90%' }}
+        className="autocomplete-input"
         onPlaceSelected={place => {
           setState({ location: place.formatted_address });
         }}

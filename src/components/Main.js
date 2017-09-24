@@ -6,12 +6,13 @@ const Main = () => {
   return (
     <div className="main-container">
       <div className="intro-wrapper">
-        <p className="intro-banner">
-          adopting a pet is something you will never regret
-        </p>
+        <p className="intro-banner">Assistance For Adopting A Pet Online</p>
+        <div id="down-arrow-icon">&darr;</div>
       </div>
-      <SearchFor />
-      <AnimalList />
+      <main className="bottom-main-page-wrapper">
+        <SearchFor />
+        <AnimalList />
+      </main>
     </div>
   );
 };

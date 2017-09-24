@@ -1,0 +1,25 @@
+#lrg-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 460px;
+  padding: 35px;
+  width: 80%;
+}
+
+.lrg-nav-link {
+  color: #aec;
+  font-size: 1.4em;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px #000;
+}
+
+.lrg-nav-link:hover {
+  color: #ace;
+  transition: all 0.5s;
+}
+
+@media (max-width: 450px) {
+  #lrg-nav-bar {
+    display: none;
+  }
+}

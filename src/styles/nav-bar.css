@@ -30,7 +30,11 @@
 }
 
 .bm-item-list {
+  align-items: center;
   color: #b8b7ad;
+  display: flex;
+  flex-direction: column;
+  height: 240px;
   padding: 0.8em;
 }
 
@@ -39,12 +43,18 @@
 }
 
 .nav-link {
-  color: #fff;
+  color: #aec;
   font-size: 2em;
+  height: 46px;
   text-decoration: none;
+  width: fit-content;
 }
 
 .nav-link:hover {
-  color: #ff5252;
+  border-bottom: 3px solid #ace;
   transition: all 0.5s;
+}
+
+.bm-menu-wrap {
+  width: 100% !important;
 }

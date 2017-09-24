@@ -6,10 +6,13 @@ class NavBar extends Component {
   loggedIn() {
     return [
       <NavLink className="nav-link" activeClassName="selected" key={0} to={'/'}>
-        home
+        Home
       </NavLink>,
       <NavLink className="nav-link" activeClassName="selected" key={1} to={'/'}>
-        logoff
+        Potential Pets
+      </NavLink>,
+      <NavLink className="nav-link" activeClassName="selected" key={2} to={'/'}>
+        Logoff
       </NavLink>
     ];
   }
@@ -17,7 +20,7 @@ class NavBar extends Component {
   loggedOff() {
     return [
       <NavLink className="nav-link" activeClassName="selected" key={0} to={'/'}>
-        home
+        Home
       </NavLink>,
       <NavLink
         className="nav-link"
@@ -25,7 +28,7 @@ class NavBar extends Component {
         key={1}
         to={'/signup'}
       >
-        sign up
+        Sign Up
       </NavLink>,
       <NavLink
         className="nav-link"
@@ -33,7 +36,7 @@ class NavBar extends Component {
         key={2}
         to={'/login'}
       >
-        login
+        Login
       </NavLink>
     ];
   }

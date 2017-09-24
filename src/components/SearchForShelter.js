@@ -3,9 +3,9 @@ import Autocomplete from 'react-google-autocomplete';
 
 const SearchForShelter = ({ setState, handleClick }) => {
   return (
-    <div>
+    <div id="search-for-shelter-wrapper">
       <Autocomplete
-        style={{ width: '90%' }}
+        className="autocomplete-input"
         onPlaceSelected={place => {
           setState({ location: place.formatted_address });
         }}

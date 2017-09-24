@@ -63,36 +63,38 @@ class SearchFor extends Component {
 
   render() {
     return (
-      <section>
-        <form>
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="pets"
-              checked={this.state.checked == 'pets'}
-              onChange={e => {
-                this.handleOptionChange(e);
-              }}
-            />
-            find a pet
-            <br />
-          </label>
-          <label>
-            <input
-              type="radio"
-              name="gender"
-              value="shelter"
-              checked={this.state.checked == 'shelter'}
-              onChange={e => {
-                this.handleOptionChange(e);
-              }}
-            />
-            find a shelter
-            <br />
-          </label>
-        </form>
-        {this.showForm()}
+      <section className="search-form-wrapper">
+        <div className="section-form-container">
+          <form>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="pets"
+                checked={this.state.checked == 'pets'}
+                onChange={e => {
+                  this.handleOptionChange(e);
+                }}
+              />
+              <span>find a pet</span>
+              <br />
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="gender"
+                value="shelter"
+                checked={this.state.checked == 'shelter'}
+                onChange={e => {
+                  this.handleOptionChange(e);
+                }}
+              />
+              <span>find a shelter</span>
+              <br />
+            </label>
+          </form>
+          {this.showForm()}
+        </div>
       </section>
     );
   }

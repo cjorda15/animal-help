@@ -4,6 +4,7 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Main from './Main';
 import NavBar from './NavBar';
 import SignUp from './SignUp';
+import LargeNavBar from './LargeNavBar';
 
 class App extends Component {
   constructor() {
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="app-container">
         <NavBar user={this.props.user} />
+        <LargeNavBar />
         <Switch>
           <Route
             path="/signup"

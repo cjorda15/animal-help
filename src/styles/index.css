@@ -1,12 +1,21 @@
 @import url('main.css');
-@import url('navbar.css');
-@import url('searchfor.css');
-@import url('adoption-info.css');
-@import url('animalcard.css');
+@import url('nav-bar.css');
+@import url('search-for.css');
+@import url('animal-card.css');
+@import url('lrg-nav-bar.css');
 
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
   margin: 0px;
   padding: 0px;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #eee;
 }
