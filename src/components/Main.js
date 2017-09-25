@@ -6,7 +6,9 @@ const Main = () => {
   return (
     <div className="main-container">
       <div className="intro-wrapper">
-        <p className="intro-banner">Assistance For Adopting A Pet Online</p>
+        <div className="intro-banner-wrapper">
+          <p className="intro-banner">Assistance For Adopting A Pet Online</p>
+        </div>
         <div id="down-arrow-icon">&darr;</div>
       </div>
       <main className="bottom-main-page-wrapper">

@@ -14,6 +14,7 @@
   color: #fff;
   font-size: 20px;
   padding-left: 5px;
+  text-shadow: 0px 1px 1px #000;
 }
 
 #search-for-pets-wrapper,
@@ -37,6 +38,7 @@
   color: #fff;
   font-size: 21px;
   padding: 5px;
+  text-shadow: 0px 1px 1px #000;
 }
 
 .search-form-wrapper select {

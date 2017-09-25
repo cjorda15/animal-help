@@ -8,14 +8,20 @@
   position: relative;
 }
 
-.intro-banner {
+.intro-banner-wrapper {
   background: #ace;
+  opacity: 0.9;
+  width: 100%;
+}
+
+.intro-banner {
   color: #aec;
-  font-size: 2.5em;
-  margin-top: 85px;
+  font-size: 2em;
+  margin: 0px auto;
   padding: 10px;
   text-align: center;
   text-shadow: 0px 1px 1px #000;
+  width: 50%;
 }
 
 #down-arrow-icon {

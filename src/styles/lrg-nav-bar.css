@@ -1,4 +1,5 @@
 #lrg-nav-bar {
+  background: #fff;
   display: flex;
   justify-content: space-between;
   max-width: 460px;
