@@ -9,12 +9,9 @@ const Main = () => {
         <div className="intro-banner-wrapper">
           <p className="intro-banner">Assistance For Adopting A Pet Online</p>
         </div>
-        <div id="down-arrow-icon">&darr;</div>
-      </div>
-      <main className="bottom-main-page-wrapper">
         <SearchFor />
-        <AnimalList />
-      </main>
+      </div>
+      <AnimalList />
     </div>
   );
 };

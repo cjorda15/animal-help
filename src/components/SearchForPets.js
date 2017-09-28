@@ -13,7 +13,7 @@ const SearchForPets = ({ setState, state, handleClick }) => {
         types={['(regions)']}
         componentRestrictions={{ country: 'usa' }}
       />
-      <p>optional search criteria</p>
+      <p>Optional Search Criteria</p>
       <OptionalOptions
         options={[
           'any',

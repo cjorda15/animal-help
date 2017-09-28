@@ -76,7 +76,7 @@ class SearchFor extends Component {
                   this.handleOptionChange(e);
                 }}
               />
-              <span>find a pet</span>
+              <span>Find a Pet</span>
               <br />
             </label>
             <label>
@@ -89,7 +89,7 @@ class SearchFor extends Component {
                   this.handleOptionChange(e);
                 }}
               />
-              <span>find a shelter</span>
+              <span>Find a Shelter</span>
               <br />
             </label>
           </form>

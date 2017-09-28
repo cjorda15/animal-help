@@ -3,52 +3,29 @@
   background-size: cover;
   background-image: url('/img/mainPageImg.jpg');
   background-size: cover;
+  background-position: center;
   border-top: 2px solid #ace;
   height: 100vh;
   position: relative;
 }
 
-.intro-banner-wrapper {
-  background: #ace;
-  opacity: 0.9;
-  width: 100%;
-}
-
 .intro-banner {
-  color: #aec;
+  color: #fff;
   font-size: 2em;
   margin: 0px auto;
   padding: 10px;
   text-align: center;
-  text-shadow: 0px 1px 1px #000;
+  text-shadow: 0px 0px 1px #000;
   width: 50%;
 }
 
-#down-arrow-icon {
-  background: #ace;
-  border-radius: 165px;
-  font-size: 50px;
-  padding: 13px;
-  position: absolute;
-  top: 500px;
-  left: 50%;
+.main-container {
 }
 
 .into-animation {
   animation-fill-mode: forwards;
   animation-name: intro;
   animation-duration: 3s;
-}
-
-.bottom-main-page-wrapper {
-  margin: 0px auto;
-  width: 80%;
-}
-
-@media (max-width: 400px) {
-  .intro-wrapper {
-    background-position-x: -130px;
-  }
 }
 
 @keyframes intro {

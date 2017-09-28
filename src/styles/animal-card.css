@@ -1,19 +1,27 @@
+.animal-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .animal-card {
   align-items: flex-start;
-  background-color: aliceblue;
+  background-color: #000;
+  border: 3px solid #fff;
   border-radius: 20px;
+  color: #fff;
   display: flex;
   flex-direction: column;
+  height: 500px;
   padding: 20px;
-  margin: 50px 0px;
+  max-width: 300px;
+  margin: 20px 10px;
+  overflow: scroll;
+  width: 100%;
 }
 
 .animal-card img {
   align-self: center;
   border-radius: 20px;
-  max-width: 400px;
-  max-height: 400px;
-  height: 100%;
   width: 100%;
 }
 
@@ -36,37 +44,17 @@
 }
 
 .animal-card button {
-  background-color: #aec;
-  border: none;
-  height: 60px;
-  margin-left: 30px;
+  background-color: #ace;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  height: 44px;
+  margin: 3px 0px;
   outline: none;
-  width: 135px;
+  text-shadow: 0px 1px 1px #000;
+  width: 65px;
 }
 
 .animal-card button:hover {
   border: 1px solid #aaa;
 }
-
-/*.left-arrow {
-  background: darkgray;
-  border-radius: 20px;
-  font-size: 45px;
-  position: absolute;
-  top: 25%;
-}
-
-.right-arrow {
-  background: darkgray;
-  border-radius: 20px;
-  font-size: 45px;
-  position: absolute;
-  top: 25%;
-  right: 0%;
-}
-
-.left-arrow:hover,
-.right-arrow:hover {
-  transition: all 1s;
-  background: red;
-}*/

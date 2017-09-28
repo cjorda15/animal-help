@@ -1,13 +1,17 @@
 .search-form-wrapper {
   align-items: center;
   background: #ace;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   height: auto;
-  margin-top: 15px;
+  max-width: 400px;
+  margin: 10px;
+  min-width: 310px;
   padding: 25px;
-  margin: 0px auto;
+  opacity: 0.9;
+  width: 100%;
 }
 
 .search-form-wrapper span {
@@ -23,9 +27,17 @@
   width: 300px;
 }
 
+.autocomplete-input,
+.search-form-wrapper button,
+.search-form-wrapper select {
+  background-color: #1a1a1a;
+  border: 2px solid cornflowerblue;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0px 1px 1px #000;
+}
+
 .autocomplete-input {
-  background-color: #aec;
-  border: none;
   height: 53px;
   font-size: 17px;
   margin-top: 10px;
@@ -48,8 +60,6 @@
 }
 
 .search-form-wrapper button {
-  background-color: #aec;
-  border: none;
   outline: none;
   margin-top: 20px;
   height: 55px;
@@ -57,7 +67,7 @@
 }
 
 .search-form-wrapper button:hover {
-  background-color: #ace;
-  border: 2px solid #000;
-  transition: all 0.5s;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  transition: all 0.3s;
 }
