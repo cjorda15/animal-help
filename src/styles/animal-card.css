@@ -22,6 +22,7 @@
 .animal-card img {
   align-self: center;
   border-radius: 20px;
+  height: 170px;
   width: 100%;
 }
 

@@ -30449,33 +30449,51 @@ var Animals = function (_Component) {
     return _this;
   }
 
+  // componentWillMount() {
+  //   if (this.props.data.media.photos) {
+  //     let photos = this.props.data.media.photos.photo.filter(
+  //       v => v['@size'] == 'pn'
+  //     );
+  //     this.setState({ photos: photos });
+  //   }
+  // }
+
+  // componentWillReceiveProps() {
+  //   if (this.props.data.media.photos) {
+  //     let photos = this.props.data.media.photos.photo.filter(
+  //       v => v['@size'] == 'pn'
+  //     );
+  //     this.setState({ photos: photos });
+  //   }
+  // }
+
   _createClass(Animals, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
+    key: 'photos',
+    value: function photos() {
       if (this.props.data.media.photos) {
-        var photos = this.props.data.media.photos.photo.filter(function (v) {
+        var photo = this.props.data.media.photos.photo.find(function (v) {
           return v['@size'] == 'pn';
         });
-        this.setState({ photos: photos });
+        return photo['$t'];
       }
     }
-  }, {
-    key: 'changePhoto',
-    value: function changePhoto(direction) {
-      if (direction == 'left') {
-        if (this.state.currentImg === 0) {
-          return;
-        } else {
-          this.setState({ currentImg: this.state.currentImg - 1 });
-        }
-      } else {
-        if (this.state.currentImg === this.state.photos.length - 1) {
-          return;
-        } else {
-          this.setState({ currentImg: this.state.currentImg + 1 });
-        }
-      }
-    }
+    //
+    // changePhoto(direction) {
+    //   if (direction == 'left') {
+    //     if (this.state.currentImg === 0) {
+    //       return;
+    //     } else {
+    //       this.setState({ currentImg: this.state.currentImg - 1 });
+    //     }
+    //   } else {
+    //     if (this.state.currentImg === this.state.photos.length - 1) {
+    //       return;
+    //     } else {
+    //       this.setState({ currentImg: this.state.currentImg + 1 });
+    //     }
+    //   }
+    // }
+
   }, {
     key: 'render',
     value: function render() {
@@ -30483,7 +30501,7 @@ var Animals = function (_Component) {
       return _react2.default.createElement(
         'div',
         { className: 'animal-card' },
-        _react2.default.createElement('img', { src: this.state.photos[this.state.currentImg]['$t'] }),
+        _react2.default.createElement('img', { src: this.photos() }),
         _react2.default.createElement(
           'div',
           { className: 'animal-card-top-content' },
@@ -40020,7 +40038,7 @@ exports = module.exports = __webpack_require__(25)(undefined);
 
 
 // module
-exports.push([module.i, ".animal-list-container {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.animal-card {\n  align-items: flex-start;\n  background-color: #000;\n  border: 3px solid #fff;\n  border-radius: 20px;\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  height: 500px;\n  padding: 20px;\n  max-width: 300px;\n  margin: 20px 10px;\n  overflow: scroll;\n  width: 100%;\n}\n\n.animal-card img {\n  align-self: center;\n  border-radius: 20px;\n  width: 100%;\n}\n\n.animal-card-top {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  position: relative;\n  margin: 0px auto;\n  width: 90%;\n}\n\n.animal-card-top-content {\n  line-height: 2.5;\n}\n\n.animal-card-bottom {\n  line-height: 2.5;\n  padding: 20px;\n}\n\n.animal-card button {\n  background-color: #ace;\n  color: #fff;\n  border: 3px solid #fff;\n  border-radius: 10px;\n  height: 44px;\n  margin: 3px 0px;\n  outline: none;\n  text-shadow: 0px 1px 1px #000;\n  width: 65px;\n}\n\n.animal-card button:hover {\n  border: 1px solid #aaa;\n}\n", ""]);
+exports.push([module.i, ".animal-list-container {\n  display: flex;\n  flex-wrap: wrap;\n}\n\n.animal-card {\n  align-items: flex-start;\n  background-color: #000;\n  border: 3px solid #fff;\n  border-radius: 20px;\n  color: #fff;\n  display: flex;\n  flex-direction: column;\n  height: 500px;\n  padding: 20px;\n  max-width: 300px;\n  margin: 20px 10px;\n  overflow: scroll;\n  width: 100%;\n}\n\n.animal-card img {\n  align-self: center;\n  border-radius: 20px;\n  height: 170px;\n  width: 100%;\n}\n\n.animal-card-top {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  position: relative;\n  margin: 0px auto;\n  width: 90%;\n}\n\n.animal-card-top-content {\n  line-height: 2.5;\n}\n\n.animal-card-bottom {\n  line-height: 2.5;\n  padding: 20px;\n}\n\n.animal-card button {\n  background-color: #ace;\n  color: #fff;\n  border: 3px solid #fff;\n  border-radius: 10px;\n  height: 44px;\n  margin: 3px 0px;\n  outline: none;\n  text-shadow: 0px 1px 1px #000;\n  width: 65px;\n}\n\n.animal-card button:hover {\n  border: 1px solid #aaa;\n}\n", ""]);
 
 // exports
 

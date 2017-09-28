@@ -9,36 +9,54 @@ class Animals extends Component {
     };
   }
 
-  componentWillMount() {
+  // componentWillMount() {
+  //   if (this.props.data.media.photos) {
+  //     let photos = this.props.data.media.photos.photo.filter(
+  //       v => v['@size'] == 'pn'
+  //     );
+  //     this.setState({ photos: photos });
+  //   }
+  // }
+
+  // componentWillReceiveProps() {
+  //   if (this.props.data.media.photos) {
+  //     let photos = this.props.data.media.photos.photo.filter(
+  //       v => v['@size'] == 'pn'
+  //     );
+  //     this.setState({ photos: photos });
+  //   }
+  // }
+
+  photos() {
     if (this.props.data.media.photos) {
-      let photos = this.props.data.media.photos.photo.filter(
+      let photo = this.props.data.media.photos.photo.find(
         v => v['@size'] == 'pn'
       );
-      this.setState({ photos: photos });
+      return photo['$t'];
     }
   }
-
-  changePhoto(direction) {
-    if (direction == 'left') {
-      if (this.state.currentImg === 0) {
-        return;
-      } else {
-        this.setState({ currentImg: this.state.currentImg - 1 });
-      }
-    } else {
-      if (this.state.currentImg === this.state.photos.length - 1) {
-        return;
-      } else {
-        this.setState({ currentImg: this.state.currentImg + 1 });
-      }
-    }
-  }
+  //
+  // changePhoto(direction) {
+  //   if (direction == 'left') {
+  //     if (this.state.currentImg === 0) {
+  //       return;
+  //     } else {
+  //       this.setState({ currentImg: this.state.currentImg - 1 });
+  //     }
+  //   } else {
+  //     if (this.state.currentImg === this.state.photos.length - 1) {
+  //       return;
+  //     } else {
+  //       this.setState({ currentImg: this.state.currentImg + 1 });
+  //     }
+  //   }
+  // }
 
   render() {
     if (!this.props.data.media.photos) return null;
     return (
       <div className="animal-card">
-        <img src={this.state.photos[this.state.currentImg]['$t']} />
+        <img src={this.photos()} />
         <div className="animal-card-top-content">
           <button>save info</button>
           <p>{this.props.data.name.$t}</p>

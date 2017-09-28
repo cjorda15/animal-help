@@ -20,25 +20,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pets', (req, res) => {
-  console.log('hit');
   const { animal, size, sex, age, location } = req.query;
-  console.log(req.query, '!#');
-  // &sex=${sex}
-  // &age=${age}
-  // &size=${size}
+  let query = `&location=${location}`;
+  // let query = `&location=${80237}`;
 
+  !sex || sex == 'both' ? null : (query += `&sex=${sex}`);
+  !age || age == 'any' ? null : (query += `&age=${age}`);
+  !size || size == 'any' ? null : (query += `&size=${size}`);
+  !animal || animal == 'any' ? null : (query += `&animal=${animal}`);
   fetch(
     `http://api.petfinder.com/pet.find?key=${process.env
-      .API_KEY}&animal=${animal}&location=80237&format=json`
+      .API_KEY}${query}&format=json`
   )
-    // fetch(
-    //   'http://api.petfinder.com/pet.find?key=2083011f1f5787d56005725f94057fc9&location=80237&format=json'
-    // )
     .then(data => data.json())
     .then(data => res.send(data))
-    // .then(data => res.send(data.body))
-    .catch(err => console.log('internal error'));
-  // res.json({ GRRR: 'MEOW' });
+    .catch(err => console.log('internal error', err));
 });
 
 app.listen(port, () => {
