@@ -2,16 +2,26 @@ import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
 import OptionalOptions from './OptionalOptions';
 
+// <Autocomplete
+// className="autocomplete-input"
+// onPlaceSelected={place => {
+//   setState({ location: place.formatted_address });
+// }}
+// types={['(regions)']}
+// componentRestrictions={{ country: 'usa' }}
+// />
+
 const SearchForPets = ({ setState, state, handleClick }) => {
   return (
     <div id="search-for-pets-wrapper">
-      <Autocomplete
-        className="autocomplete-input"
-        onPlaceSelected={place => {
-          setState({ location: place.formatted_address });
+      <input
+        className="zipcode-input"
+        type="text"
+        placeholder="zipcode"
+        value={state.location}
+        onChange={e => {
+          setState({ location: e.target.value });
         }}
-        types={['(regions)']}
-        componentRestrictions={{ country: 'usa' }}
       />
       <p>Optional Search Criteria</p>
       <OptionalOptions

@@ -27,7 +27,7 @@ class SearchFor extends Component {
         .then(val => this.props.handleAnimalList(val.petfinder.pets.pet))
         .catch(err => console.log(err, '???'));
     } else {
-      fetch('shelters')
+      fetch(`shelters/?location=${location}`)
         .then(val => val.json())
         .then(val => console.log(val, '!!!'))
         .catch(err => console.log(err, '???'));

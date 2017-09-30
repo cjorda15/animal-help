@@ -33,6 +33,7 @@ app.get('/pets', (req, res) => {
       .API_KEY}${query}&format=json`
   )
     .then(data => data.json())
+    // .then(data => console.log(data.petfinder.header.status, '!34'))
     .then(data => res.send(data))
     .catch(err => console.log('internal error', err));
 });

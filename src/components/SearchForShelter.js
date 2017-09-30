@@ -1,16 +1,25 @@
 import React from 'react';
 import Autocomplete from 'react-google-autocomplete';
 
-const SearchForShelter = ({ setState, handleClick }) => {
+// <Autocomplete
+// className="autocomplete-input"
+// onPlaceSelected={place => {
+//   setState({ location: place.formatted_address });
+// }}
+// types={['(regions)']}
+// componentRestrictions={{ country: 'usa' }}
+// />
+
+const SearchForShelter = ({ setState, handleClick, state }) => {
   return (
     <div id="search-for-shelter-wrapper">
-      <Autocomplete
-        className="autocomplete-input"
-        onPlaceSelected={place => {
-          setState({ location: place.formatted_address });
+      <input
+        type="text"
+        placeholder="zipcode"
+        value={state.location}
+        onChange={e => {
+          setState({ location: e.target.value });
         }}
-        types={['(regions)']}
-        componentRestrictions={{ country: 'usa' }}
       />
       <button
         onClick={() => {
