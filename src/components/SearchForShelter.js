@@ -14,8 +14,10 @@ const SearchForShelter = ({ setState, handleClick, state }) => {
   return (
     <div id="search-for-shelter-wrapper">
       <input
+        className="zipcode-input"
         type="text"
         placeholder="zipcode"
+        maxLength="5"
         value={state.location}
         onChange={e => {
           setState({ location: e.target.value });

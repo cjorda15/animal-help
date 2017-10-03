@@ -17,6 +17,7 @@ const SearchForPets = ({ setState, state, handleClick }) => {
       <input
         className="zipcode-input"
         type="text"
+        maxLength="5"
         placeholder="zipcode"
         value={state.location}
         onChange={e => {

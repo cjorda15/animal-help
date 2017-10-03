@@ -13,7 +13,9 @@ class SearchFor extends Component {
       size: 'any',
       sex: 'both',
       age: 'any',
-      location: ''
+      location: '',
+      error: '',
+      errorMessage: ''
     };
   }
 
@@ -24,13 +26,22 @@ class SearchFor extends Component {
         `pets/?animal=${animal}&size=${size}&sex=${sex}&age=${age}&location=${location}`
       )
         .then(val => val.json())
-        .then(val => this.props.handleAnimalList(val.petfinder.pets.pet))
+        .then(val => this.handleResponse(val))
+        // .then(val =>
         .catch(err => console.log(err, '???'));
     } else {
       fetch(`shelters/?location=${location}`)
         .then(val => val.json())
         .then(val => console.log(val, '!!!'))
         .catch(err => console.log(err, '???'));
+    }
+  }
+
+  handleResponse(response) {
+    if (response.petfinder.header.status.code['$t'] === '100') {
+      this.props.handleAnimalList(response.petfinder.pets.pet);
+    } else {
+      console.log(response, '!#@$!@#$');
     }
   }
 
